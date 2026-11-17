@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez les commerces partenaires de l'Eau de Paris.">
+  <title>Adataviz | Eau de Paris</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">EAU<span>.</span>PARIS</a>
+    <span class="header-label">OPEN DATA PROJECT</span>
+  </header>
+
+  <main class="container">
+
+    <!-- Première section : présentation et informations -->
+    <section class="top-section">
+
+      <div class="intro-card">
+        <p class="eyebrow">DÉCOUVRIR PARIS AUTREMENT</p>
+        <h1>L'eau près de chez vous.</h1>
+        <p class="intro-text">
+          Découvrez les commerces partenaires où vous pouvez
+          boire de l'eau ou remplir votre gourde gratuitement.
+        </p>
+
+        <div class="total-block">
+          <span id="total-count">Chargement...</span>
+          <span class="total-label">commerces référencés</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="water-icon">💧</div>
+        <p class="eyebrow">ICI, JE CHOISIS</p>
+        <h2>L'eau de Paris</h2>
+        <p>
+          Un réseau de commerces engagés pour réduire
+          l'utilisation des bouteilles en plastique.
+        </p>
+        <a href="https://www.eaudeparis.fr/ici-je-choisis-leau-de-paris"
+           target="_blank" rel="noopener noreferrer">
+          En savoir plus →
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Section principale : recherche et liste -->
+    <section class="catalog-section">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOTRE RÉSEAU</p>
+          <h2>Les commerces partenaires</h2>
+        </div>
+        <span id="results-count" class="results-count">0 résultat</span>
+      </div>
+
+      <div class="filters">
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Rechercher un commerce..."
+          >
+        </label>
+
+        <select id="street-filter" aria-label="Filtrer par rue">
+          <option value="">Toutes les rues</option>
+        </select>
+      </div>
+
+      <p id="status-message" class="status-message" aria-live="polite">
+        Chargement des commerces...
+      </p>
+
+      <div id="commerce-container" class="commerce-grid"></div>
+
+    </section>
+
+    <!-- Section statistiques -->
+    <section class="stats-section">
+
+      <article class="stat-card">
+        <span class="stat-icon">🏪</span>
+        <p class="stat-label">Commerces affichés</p>
+        <strong id="displayed-count">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">📍</span>
+        <p class="stat-label">Rues représentées</p>
+        <strong id="street-count">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">🌿</span>
+        <p class="stat-label">Engagement</p>
+        <strong>100%</strong>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>ADATAVIZ © 2026 — DONNÉES OUVERTES DE PARIS</p>
+    <p>Un geste simple pour une ville plus durable.</p>
+  </footer>
+
+</body>
+</html>
