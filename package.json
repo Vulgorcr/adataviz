@@ -1,0 +1,12 @@
+{
+  "name": "adataviz-eau-de-paris",
+  "version": "1.0.0",
+  "description": "Application de visualisation des commerces partenaires de l'Eau de Paris",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0"
+  }
+}
