@@ -1,5 +1,4 @@
-// * Transforme une donnée brute de l'API
-// * en objet simple à utiliser dans l'application.
+// * Transforme une donnée brute de l'API en objet simple à utiliser dans l'application.
 export const formaterDonnee = (item) => {
   return {
     id: item.id,
@@ -47,7 +46,7 @@ export const filtrerParRue = (donnees, rue) => {
 };
 
 /**
- * Trie les commerces par ordre alphabétique.
+ * Trie les commerces par ordre alphabétique. (un array vers un nouveu array sans modifie le tableu d'origine)
  */
 export const trierParNom = (donnees) => {
   return [...donnees].sort((a, b) =>

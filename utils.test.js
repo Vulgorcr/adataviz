@@ -1,6 +1,6 @@
 import {
   formaterDonnee,
-  filtrerParNom,
+  filtrerParAdresse,
   filtrerParRue,
   trierParNom,
   compterLesRues,
@@ -44,15 +44,35 @@ describe("formaterDonnee", () => {
   });
 });
 
-describe("filtrerParNom", () => {
+describe("filtrerParAdresse", () => {
+  test("recherche par nom de rue", () => {
+    const resultat = filtrerParAdresse(
+      commerces,
+      "SAINT-DOMINIQUE"
+    );
+
+    expect(resultat).toHaveLength(2);
+  });
+
   test("recherche sans tenir compte des majuscules", () => {
-    const resultat = filtrerParNom(commerces, "paon");
+    const resultat = filtrerParAdresse(
+      commerces,
+      "rue saint-dominique"
+    );
+
+    expect(resultat).toHaveLength(2);
+  });
+
+  test("recherche par numéro de voie", () => {
+    const resultat = filtrerParAdresse(commerces, "58");
 
     expect(resultat).toHaveLength(1);
-    expect(resultat[0].nom).toBe("PAON CAFE");
+  });
+
+  test("retourne tous les commerces si la recherche est vide", () => {
+    expect(filtrerParAdresse(commerces, "")).toHaveLength(3);
   });
 });
-
 describe("filtrerParRue", () => {
   test("retourne les commerces d'une rue", () => {
     const resultat = filtrerParRue(

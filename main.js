@@ -24,9 +24,9 @@ const statusMessage = document.querySelector("#status-message");
 let commerces = [];
 let totalAPI = 0;
 
-/**
- * Récupère les données depuis l'API.
- */
+
+ //Récupère les données depuis l'API.
+
 const recupererDonnees = async () => {
   try {
     statusMessage.textContent = "Chargement des commerces...";
@@ -37,9 +37,9 @@ const recupererDonnees = async () => {
       throw new Error("Erreur lors de la récupération des données.");
     }
 
-    const data = await response.json();
+    const data = await response.json(); //Le code attend que la reponse soit convertie en Js.
 
-    commerces = data.results.map(formaterDonnee);
+    commerces = data.results.map(formaterDonnee); //Chaque donne de l'API passe par ici
 
     totalAPI = data.total_count;
 
@@ -54,18 +54,17 @@ const recupererDonnees = async () => {
     statusMessage.textContent =
       "Impossible de charger les données. Veuillez réessayer.";
 
-    totalCount.textContent = "1500";
+    totalCount.textContent = "Indisponible";
   }
 };
 
 /**
  * Remplit le menu avec les rues disponibles.
  */
-const remplirFiltre = () => {
+const remplirFiltre = () => { //Cette fonction récupère les noms des rues
   const rues = [...new Set(
-    commerces.map((commerce) => commerce.rue)
-  )].sort((a, b) => a.localeCompare(b, "fr"));
-
+    commerces.map((commerce) => commerce.rue) // Extrais uniquement les noms des rues.
+  )].sort((a, b) => a.localeCompare(b, "fr")); 
   streetFilter.innerHTML = '<option value="">Toutes les rues</option>';
 
   rues.forEach((rue) => {
