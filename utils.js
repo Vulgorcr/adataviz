@@ -36,9 +36,7 @@ export const filtrerParAdresse = (donnees, recherche) => {
   });
 };
 
-/**
- * Filtre les commerces par nom de rue.
- */
+
 export const filtrerParRue = (donnees, rue) => {
   if (!rue) return donnees;
 
